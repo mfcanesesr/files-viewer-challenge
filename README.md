@@ -30,8 +30,6 @@ Incluye un backend en **Node.js + Express** y un frontend en **React**, con arqu
 
 ## 🧠 2. Arquitectura y Flujo Interno
 
-El sistema sigue un flujo de datos claro y desacoplado:
-
 ```
 API Externa (CSV)
         ↓
@@ -47,21 +45,19 @@ Frontend (React)
   - Pagina y muestra en tabla
 ```
 
-Beneficios:
-- Backend actúa como **capa de saneamiento y estandarización**.  
-- Frontend recibe un formato consistente sin preocuparse por errores CSV.  
-- Fácil de escalar para agregar caché, autenticación o más proveedores.
-
 ---
 
 ## 🟣 3. Backend (API)
 
 ### ⚙️ Configuración de entorno
 
-```bash
+Crear un archivo `.env` dentro de `/api` con el siguiente contenido:
+
+```env
 PORT=3001
 API_EXTERNAL_URL=https://echo-serv.tbxnet.com/v1/secret
 API_KEY=aSuperSecretKey
+NODE_ENV=development
 ```
 
 ### 📥 Instalación
@@ -91,7 +87,7 @@ http://localhost:3001
 |--------|----------|-------------|
 | GET | `/health` | Verifica disponibilidad del backend. |
 | GET | `/files/data` | Procesa todos los CSV y devuelve el JSON final. |
-| GET | `/files/data?fileName=file.csv` | Filtra resultados por nombre de archivo. |
+| GET | `/files/data?fileName=file.csv` | Filtra por nombre de archivo. |
 
 ### Ejemplo de Respuesta del API
 
@@ -156,11 +152,6 @@ cd frontend
 npm test
 ```
 
-Cobertura:
-- Validación de endpoints  
-- Mock del servicio externo  
-- Renderización y filtrado en UI  
-
 ---
 
 ## 📦 6. Scripts recomendados
@@ -170,9 +161,8 @@ npm start
 npm test
 ```
 
----
 
-## 🧑‍💻 9. Autor
+---
 
 Challenge desarrollado por **Fer Caneses**  
 
