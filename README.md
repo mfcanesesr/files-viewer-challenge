@@ -1,4 +1,4 @@
-# 🚀 Full Stack JavaScript Challenge – Files Viewer (Versión Senior-Ready)
+# 🚀 Full Stack Challenge – Files Viewer
 
 Este proyecto implementa una solución Full Stack para la visualización y procesamiento de archivos CSV obtenidos desde un API externo.  
 Incluye un backend en **Node.js + Express** y un frontend en **React**, con arquitectura modular, pruebas automatizadas y una UI optimizada con filtros y paginación.
